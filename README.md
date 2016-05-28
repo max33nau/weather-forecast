@@ -35,6 +35,8 @@ weather-forecast-state folder
 
  - If you want to preview it quickly you can run npm start in the app folder to run webpack-dev-server
 
+- or you can go here to see it deployed live:
+weather-forecast.surge.sh
 
 ## Tests
 mainly focused on writing back end tests but front end tests are set up and passing
