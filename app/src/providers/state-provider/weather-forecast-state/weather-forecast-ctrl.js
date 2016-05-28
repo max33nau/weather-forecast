@@ -2,18 +2,14 @@
 export default function(ngModule) {
   ngModule.controller('weatherForecastCtrl', ['$scope','$rootScope','LocationService',function($scope, $rootScope, LocationService) {
     $scope.weather = {};
+    $scope.weather.error = {};
     $scope.weather.title = 'Weather Forecast';
     $scope.weather.currentLocation = 'Portland, OR';
     if($rootScope.root.latitude && $rootScope.root.longitude) {
       LocationService.getCurrentLocation().then(function(response){
-        var locationData = response.data.current_observation;
-        $scope.weather = LocationService.loadData(locationData);
+        $scope.weather = LocationService.loadData(response.data.current_observation);
         LocationService.getForecastZipcode($scope.weather.zipcode).then(function(response){
-          var forecastData = LocationService.loadForecastData(response.data.forecast);
-          $scope.weather.today = forecastData.days[0];
-          $scope.weather.tomorrow = forecastData.days[1];
-          $scope.weather.day2 = forecastData.days[2];
-          $scope.weather.day3 = forecastData.days[3];
+          $scope.weather = LocationService.loadForecastData(response.data.forecast, $scope.weather);
         });
       })
       .catch(function(error){
@@ -21,31 +17,24 @@ export default function(ngModule) {
       });
     } else {
       LocationService.getLocation($scope.currentLocation.zip).then(function(response){
-        var locationData = response.data.current_observation;
-        $scope.weather = LocationService.loadData(locationData);
+        $scope.weather = LocationService.loadData(response.data.current_observation);
         LocationService.getForecastZipcode($scope.weather.zipcode).then(function(response){
-          var forecastData = LocationService.loadForecastData(response.data.forecast);
-          $scope.weather.today = forecastData.days[0];
-          $scope.weather.tomorrow = forecastData.days[1];
-          $scope.weather.day2 = forecastData.days[2];
-          $scope.weather.day3 = forecastData.days[3];
+          $scope.weather = LocationService.loadForecastData(response.data.forecast, $scope.weather);
         });
       })
       .catch(function(error){
         console.log(error);
       });
     }
-    $scope.weather.changeLocation= function() {
+    $scope.changeLocation= function() {
       LocationService.getLocation($scope.weather.zipcode).then(function(response){
-        var locationData = response.data.current_observation;
-        $scope.weather = LocationService.loadData(locationData);
+        $scope.weather = LocationService.loadData(response.data.current_observation);
         LocationService.getForecastZipcode($scope.weather.zipcode).then(function(response){
-          var forecastData = LocationService.loadForecastData(response.data.forecast);
-          $scope.weather.today = forecastData.days[0];
-          $scope.weather.tomorrow = forecastData.days[1];
-          $scope.weather.day2 = forecastData.days[2];
-          $scope.weather.day3 = forecastData.days[3];
+          $scope.weather = LocationService.loadForecastData(response.data.forecast, $scope.weather);
         });
+      })
+      .catch(function(error){
+        console.log(error);
       })
     };
   }]);

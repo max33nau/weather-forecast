@@ -61,9 +61,26 @@
     </div>
   </div>
 
-
   <div id='zipcode' class="col-sm-12 text-center center-block">
-      Zip Code: <input ng-model='weather.zipcode'/> <button ng-click='weather.changeLocation()'> Change </button>
+    <form class='form-inline' name='zipcodeForm' novalidate>
+      <div class='form-group'>
+        <label for='zipcode'> Zip Code: </label>
+        <input type='text' class='form-control' ng-model='weather.zipcode' placeholder="Enter Zip Here"
+        name="zipcode"
+        ng-model-options="{ updateOn: 'default blur', debounce: { default: 250, blur: 0 } }"
+        pattern='^[0-9]+$'
+        minLength="5"
+        maxlength="5"
+        required
+        />
+        <button type='submit' ng-click='zipcodeForm.$valid ? changeLocation() : return' class="btn btn-primary"> Change </button>
+      </div>
+      <div ng-messages="zipcodeForm.zipcode.$error" ng-if="zipcodeForm.zipcode.$touched">
+         <div class='form-error' ng-message="required" >Zipcode Required</div>
+        <div class='form-error' ng-message="pattern">Zipcode can only be numbers</div>
+         <div class='form-error' ng-message="minlength">Zipcode must be at least 6 numbers</div>
+      </div>
+    </form>
   </div>
 
 </div>

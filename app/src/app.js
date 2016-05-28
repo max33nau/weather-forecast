@@ -5,6 +5,7 @@ import './style/main.scss';
 /* Vendors */
 import angular from 'angular' ;
 import angularStateRouter from 'angular-ui-router';
+import angularMessages from 'angular-messages';
 
 /* $stateProvider Configuration */
 import configStateProvider from './providers/state-provider';
@@ -18,7 +19,8 @@ import factories from './providers/factories';
 const app = angular.module('weatherApp', [
   angularStateRouter,
   stateCtrls,
-  factories
+  factories,
+  angularMessages
 ]);
 
 

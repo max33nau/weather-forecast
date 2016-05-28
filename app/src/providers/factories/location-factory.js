@@ -25,7 +25,7 @@ export default function( ngModule ) {
       return weather;
     };
 
-    location.loadForecastData = function(data) {
+    location.loadForecastData = function(data,weather) {
       var forecast = {};
       forecast.days = [];
       data.simpleforecast.forecastday.forEach(function(day){
@@ -47,7 +47,11 @@ export default function( ngModule ) {
         forecast.days[ii].icon = currentDay.icon_url;
         jj = jj+2;
       }
-      return forecast;
+      weather.today = forecast.days[0];
+      weather.tomorrow = forecast.days[1];
+      weather.day2 = forecast.days[2];
+      weather.day3 = forecast.days[3];
+      return weather;
     }
 
 
