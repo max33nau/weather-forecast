@@ -57,12 +57,11 @@ describe('Weather Underground API ', function(){
   });
 
   language = 'SP'; // Allow the user to view the weather data in SPANISH
-  let monthsInSpanish = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre','dicembre']
+  let monthsInSpanish = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre','dicembre'];
   it('should allow me to get the forecast for the next three days IN SPANISH', function(done){
     chaiRequest.get('/forecast/lang:'+language+'/q/'+zipcode+'.json')
       .then(function(response){
         expect(response).to.have.status(200);
-        console.log(response.body.forecast.simpleforecast.forecastday[0]);
         let monthExists = monthsInSpanish.indexOf(response.body.forecast.simpleforecast.forecastday[0].date.monthname.toLowerCase());
         expect(monthExists).to.not.equal(-1); // monthExists will be -1 if the month does not exist in the monthsInSpanish array
         done();
