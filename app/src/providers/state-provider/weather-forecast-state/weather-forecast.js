@@ -6,11 +6,11 @@ export default {
   template,
   controller: 'weatherForecastCtrl',
   resolve: {
-    waitForGeoLocation: function($q, $timeout){
+    waitForGeoLocation: function($q, $timeout){ // Give geo location a chance to respond with data otherwise go to default location
       var deferred = $q.defer();
       $timeout(function() {
           deferred.resolve(true);
-        }, 4000);
+        }, 5000);
       return deferred.promise;
     }
   }

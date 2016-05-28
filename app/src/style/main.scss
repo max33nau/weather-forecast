@@ -1,5 +1,14 @@
 @import '_sunny';
-body { padding-bottom: 70px;}
+
+h1 {
+  font-family: 'Bowlby One SC', sans-serif;
+  font-weight: bolder;
+}
+
+body {
+  padding-bottom: 70px;
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 .logo-wrapper {
   width: 300px;
