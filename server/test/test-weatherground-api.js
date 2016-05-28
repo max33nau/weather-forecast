@@ -30,6 +30,32 @@ describe('Weather Underground API ', function(){
       .catch(done);
   });
 
+  it('should allow me to get location data and current conditions based on longitude and latitude', function(done){
+    chaiRequest.get('/conditions/lang:'+language+'/q/37.8,-122.4.json')
+      .then(function(response){
+        expect(response).to.have.status(200);
+        expect(response.body.current_observation.display_location.city).to.deep.equal('San Francisco');
+        expect(response.body.current_observation.display_location.state).to.deep.equal('CA');
+        expect(response.body.current_observation.display_location.zip).to.deep.equal('94133');
+        expect(response.body.current_observation.display_location.country).to.deep.equal('US');
+        expect(response.body.current_observation).to.have.any.keys('temp_f', 'weather', 'feelslike_f','icon_url','forcast_url', 'temperature_string');
+        expect(response.body.current_observation.image).have.any.keys('url', 'title', 'link');
+        done();
+      })
+      .catch(done);
+  });
+
+  it('should allow me to get the forecast for the next three days based on longitude and latitud', function(done){
+    chaiRequest.get('/forecast/lang:'+language+'/q/37.8,-122.4.json')
+      .then(function(response){
+        expect(response).to.have.status(200);
+        expect(response.body.forecast.simpleforecast.forecastday.length).to.deep.equal(4); // Today and then the next 3 days of forecast
+        expect(response.body.forecast.simpleforecast.forecastday[0]).to.have.any.keys('conditions', 'icon_url', 'high', 'low', 'date');
+        done();
+      })
+      .catch(done);
+  });
+
   it('should allow me to get location data and current conditions with a zipcode', function(done){
     chaiRequest.get('/conditions/lang:'+language+'/q/'+zipcode+'.json')
       .then(function(response){
@@ -45,7 +71,7 @@ describe('Weather Underground API ', function(){
       .catch(done);
   });
 
-  it('should allow me to get the forecast for the next three days', function(done){
+  it('should allow me to get the forecast for the next three days based on zipcode', function(done){
     chaiRequest.get('/forecast/lang:'+language+'/q/'+zipcode+'.json')
       .then(function(response){
         expect(response).to.have.status(200);

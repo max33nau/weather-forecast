@@ -11,8 +11,8 @@
     "module"      : false,
     "process"     : false,
     "console"     : false,
-    "API_URL"     : false,
-    "CLIENT_ID"   : false
+    "WEATHER_API_URL" : false,
+    "WEATHER_API_KEY": false
   },
   "esnext": true
 }

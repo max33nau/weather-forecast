@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const path = require('path');
 const publicPath = path.resolve(__dirname,'../server/src/public');
+const Define = webpack.DefinePlugin;
 
 module.exports = {
   entry: './src/app.js',
@@ -13,6 +14,10 @@ module.exports = {
   plugins: [
         new HtmlWebpackPlugin({
           template: './src/index.html'
+        }),
+        new Define({
+          WEATHER_API_KEY: JSON.stringify(process.env.WEATHER_API_KEY || ''),
+          WEATHER_API_URL: JSON.stringify(process.env.WEATHER_API_URL || '')
         })
   ],
   module: {

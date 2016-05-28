@@ -1,3 +1,4 @@
+@import '_sunny';
 body { padding-bottom: 70px;}
 
 .logo-wrapper {
@@ -15,22 +16,9 @@ footer {
   align-items: center;
 }
 
-#currentLocation {
-  border: 2px solid red;
+.dayOfWeather {
+  border: 2px solid #000;
   padding: 20px;
-}
-
-#day1{
-  border: 2px solid red;
-    padding: 20px;
-}
-#day2 {
-  border: 2px solid red;
-    padding: 20px;
-}
-#day3 {
-  border: 2px solid red;
-    padding: 20px;
 }
 
 #zipcode {

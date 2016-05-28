@@ -21,6 +21,8 @@ const app = angular.module('weatherApp', [
   factories
 ]);
 
+
+app.constant('WEATHER_API_URL', WEATHER_API_URL + WEATHER_API_KEY);
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/weather-forecast');
   configStateProvider($stateProvider);
@@ -33,10 +35,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $rootScope.$apply(function(){
       $rootScope.root.latitude = latitude;
       $rootScope.root.longitude = longitude;
-    })
-  })
+    });
+  });
 }
-})
+});
 
 angular.element(document).ready(function() {
   angular.bootstrap(document, ['weatherApp']);
