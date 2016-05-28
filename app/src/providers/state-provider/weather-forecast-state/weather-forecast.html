@@ -2,14 +2,19 @@
 <div class='row'>
   <div class='col-sm-12 dayOfWeather'>
     <div class='row vertical-center'>
-      <h1 class='col-sm-4 text-center'> Today </h1>
-      <div class='col-sm-4 center-block text-center'>
-        <h5> Portland, Oregon </h5>
-        <i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
+      <div class='col-sm-4 text-center'>
+        <h1> Today </h1>
+        <p> {{weather.today.date}} </p>
       </div>
       <div class='col-sm-4 center-block text-center'>
-        <h4>70 degrees </h4>
-        <p> Cloudy </p>
+        <h5> {{weather.currentLocation}} </h5>
+        <img src={{weather.icon}} />
+        <br>
+        <p> Feels like {{weather.feelsLikeF}} &#8457;</p>
+      </div>
+      <div class='col-sm-4 center-block text-center'>
+        <h4>{{weather.temperatureF}} &#8457; </h4>
+        <p> {{weather.type}}</p>
       </div>
     </div>
   </div>
@@ -17,12 +22,13 @@
   <div class="col-sm-4 dayOfWeather">
     <div class='row vertical-center'>
       <div class='col-sm-6 center-block text-center'>
-        <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
-        <h4 class='text-center'> Saturday </h4>
+        <img src={{weather.tomorrow.icon}} />
+        <h4 class='text-center'> {{weather.tomorrow.dayName}}</h4>
       </div>
       <div class='col-sm-6 center-block text-center'>
-          <h4>68 degrees </h4>
-          <p> Sunny </p>
+          <h4>Low: {{weather.tomorrow.lowF}} &#8457; </h4>
+          <h4>High: {{weather.tomorrow.highF}} &#8457;</h4>
+          <p> {{weather.tomorrow.conditions}} </p>
       </div>
     </div>
   </div>
@@ -30,26 +36,27 @@
   <div class="col-sm-4 dayOfWeather">
     <div class='row vertical-center'>
       <div class='col-sm-6 center-block text-center'>
-        <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
-        <h4> Sunday </h4>
+        <img src={{weather.day2.icon}} />
+        <h4 class='text-center'> {{weather.day2.dayName}}</h4>
       </div>
       <div class='col-sm-6 center-block text-center'>
-          <h4>75 degrees </h4>
-          <p> Sunny </p>
+          <h4>Low: {{weather.day2.lowF}} &#8457; </h4>
+          <h4>High: {{weather.day2.highF}} &#8457;</h4>
+          <p> {{weather.day2.conditions}} </p>
       </div>
     </div>
   </div>
 
-
   <div class="col-sm-4 dayOfWeather">
     <div class='row vertical-center'>
-      <div class='col-sm-4 center-block text-center'>
-        <i class="fa fa-tint fa-5x" aria-hidden="true"></i>
-        <h4> Monday </h4>
+      <div class='col-sm-6 center-block text-center'>
+        <img src={{weather.day3.icon}} />
+        <h4 class='text-center'> {{weather.day3.dayName}}</h4>
       </div>
-      <div class='col-sm-4 center-block text-center'>
-          <h4>45 degrees </h4>
-          <p> rainy</p>
+      <div class='col-sm-6 center-block text-center'>
+          <h4>Low: {{weather.day3.lowF}} &#8457; </h4>
+          <h4>High: {{weather.day3.highF}} &#8457;</h4>
+          <p> {{weather.day3.conditions}} </p>
       </div>
     </div>
   </div>
