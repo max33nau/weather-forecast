@@ -36,7 +36,7 @@ export default function(ngModule) {
       })
       .catch(function(error){
         console.log(error);
-      })
+      });
     };
   }]);
 }

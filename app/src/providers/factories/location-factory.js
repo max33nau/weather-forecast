@@ -52,7 +52,7 @@ export default function( ngModule ) {
       weather.day2 = forecast.days[2];
       weather.day3 = forecast.days[3];
       return weather;
-    }
+    };
 
 
     location.getLocation = function(zipcode) {

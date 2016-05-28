@@ -27,4 +27,41 @@ An app designed to show you the forecast of weather based on your location.
  back end.
 
  - As a user I want the form to have validation so I don't risk entering information that
- is not sufficient. 
+ is not sufficient.
+
+## Front End is located in the app folder.
+ - Main functionality is in the providers/state-provider/
+weather-forecast-state folder
+
+ - If you want to preview it quickly you can run npm start in the app folder to run webpack-dev-server
+
+
+## Tests
+mainly focused on writing back end tests but front end tests are set up and passing
+
+###Weather Underground API tests Steps
+  1. To run the tests cd into the server folder and then run npm install in your terminal
+  2. Afer npm install has ran, simply run 'npm test' in your terminal and you should pass all your tests
+
+###Front End Protractor
+cd into the app folder and run npm install
+
+Protractor
+  1. If you do not have webdriver updated, run the command npm run update-webdriver.
+  2. After that enter the commands
+    - npm run webdriver
+    - npm start
+    - Make sure both the commands are running in separate terminals.
+    - npm run e2e
+    - this will run tests on protractor
+
+Karma
+ - npm run unit in the app folder
+
+
+## Stretch Goals
+
+1. Allow users to switch between Farenheit or Celsius,
+data is there. Just need to add the functionality.
+
+2. Add drop down menus that give more details about what the future tasks are going to be like.
