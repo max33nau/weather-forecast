@@ -21,6 +21,7 @@ footer {
   padding: 20px;
 }
 
+
 #zipcode {
   padding: 20px;
 }
@@ -33,4 +34,13 @@ footer {
 .justify-center {
   display: flex;
   justify-content: center;
+}
+
+.form-error {
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  font-weight: bolder;
+  font-size: .8em;
 }

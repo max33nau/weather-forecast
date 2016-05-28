@@ -7,13 +7,13 @@
         <p> {{weather.today.date}} </p>
       </div>
       <div class='col-sm-4 center-block text-center'>
-        <h5> {{weather.currentLocation}} </h5>
+        <h4> {{weather.currentLocation}} </h4>
         <img src={{weather.icon}} />
         <br>
         <p> Feels like {{weather.feelsLikeF}} &#8457;</p>
       </div>
       <div class='col-sm-4 center-block text-center'>
-        <h4>{{weather.temperatureF}} &#8457; </h4>
+        <h3>{{weather.temperatureF}} &#8457; </h3>
         <p> {{weather.type}}</p>
       </div>
     </div>
@@ -26,8 +26,8 @@
         <h4 class='text-center'> {{weather.tomorrow.dayName}}</h4>
       </div>
       <div class='col-sm-6 center-block text-center'>
-          <h4>Low: {{weather.tomorrow.lowF}} &#8457; </h4>
-          <h4>High: {{weather.tomorrow.highF}} &#8457;</h4>
+          <h4 class='text-primary'>Low: {{weather.tomorrow.lowF}} &#8457; </h4>
+          <h4 class='text-danger'>High: {{weather.tomorrow.highF}} &#8457;</h4>
           <p> {{weather.tomorrow.conditions}} </p>
       </div>
     </div>
@@ -40,8 +40,8 @@
         <h4 class='text-center'> {{weather.day2.dayName}}</h4>
       </div>
       <div class='col-sm-6 center-block text-center'>
-          <h4>Low: {{weather.day2.lowF}} &#8457; </h4>
-          <h4>High: {{weather.day2.highF}} &#8457;</h4>
+          <h4 class='text-primary'>Low: {{weather.day2.lowF}} &#8457; </h4>
+          <h4 class='text-danger'>High: {{weather.day2.highF}} &#8457;</h4>
           <p> {{weather.day2.conditions}} </p>
       </div>
     </div>
@@ -54,8 +54,8 @@
         <h4 class='text-center'> {{weather.day3.dayName}}</h4>
       </div>
       <div class='col-sm-6 center-block text-center'>
-          <h4>Low: {{weather.day3.lowF}} &#8457; </h4>
-          <h4>High: {{weather.day3.highF}} &#8457;</h4>
+          <h4 class='text-primary'>Low: {{weather.day3.lowF}} &#8457; </h4>
+          <h4 class='text-danger'>High: {{weather.day3.highF}} &#8457;</h4>
           <p> {{weather.day3.conditions}} </p>
       </div>
     </div>
@@ -73,12 +73,20 @@
         maxlength="5"
         required
         />
+
         <button type='submit' ng-click='zipcodeForm.$valid ? changeLocation() : return' class="btn btn-primary"> Change </button>
       </div>
       <div ng-messages="zipcodeForm.zipcode.$error" ng-if="zipcodeForm.zipcode.$touched">
-         <div class='form-error' ng-message="required" >Zipcode Required</div>
-        <div class='form-error' ng-message="pattern">Zipcode can only be numbers</div>
-         <div class='form-error' ng-message="minlength">Zipcode must be at least 6 numbers</div>
+         <div class='alert alert-danger form-error' ng-message="required" >
+             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+         Zipcode Required </div>
+        <div class='alert alert-danger form-error' ng-message="pattern">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          Zipcode can only be numbers
+        </div>
+         <div class='alert alert-danger form-error' ng-message="minlength">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+           Zipcode must be at least 6 numbers</div>
       </div>
     </form>
   </div>
