@@ -1,0 +1,18 @@
+{
+  "undef": true,
+  "strict": false,
+  "node": true,
+  "globals": {
+    "require"     : false,
+    "angular"     : false,
+    "document"    : false,
+    "window"      : false,
+    "exports"     : false,
+    "module"      : false,
+    "process"     : false,
+    "console"     : false,
+    "API_URL"     : false,
+    "CLIENT_ID"   : false
+  },
+  "esnext": true
+}
