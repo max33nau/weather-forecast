@@ -1,1 +1,62 @@
+<div class='container'>
+<div class='row'>
+  <div id='currentLocation' class='col-sm-12"'>
+    <div class='row vertical-center'>
+      <h1 class='col-sm-4 text-center'> Today </h1>
+      <div class='col-sm-4 center-block text-center'>
+        <p> Portland, Oregon </p>
+        <i class="fa fa-cloud fa-5x" aria-hidden="true"></i>
+      </div>
+      <div class='col-sm-4 center-block text-center'>
+        <h4>70 degrees </h4>
+        <p> Cloudy </p>
+      </div>
+    </div>
+  </div>
 
+  <div id='day1' class="col-sm-4">
+    <div class='row vertical-center'>
+      <div class='col-sm-6 center-block text-center'>
+        <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
+        <h4 class='text-center'> Saturday </h4>
+      </div>
+      <div class='col-sm-6 center-block text-center'>
+          <h4>68 degrees </h4>
+          <p> Sunny </p>
+      </div>
+    </div>
+  </div>
+
+  <div id='day2' class="col-sm-4">
+    <div class='row vertical-center'>
+      <div class='col-sm-6 center-block text-center'>
+        <i class="fa fa-sun-o fa-5x" aria-hidden="true"></i>
+        <h4> Sunday </h4>
+      </div>
+      <div class='col-sm-6 center-block text-center'>
+          <h4>75 degrees </h4>
+          <p> Sunny </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id='day3' class="col-sm-4">
+    <div class='row vertical-center'>
+      <div class='col-sm-4 center-block text-center'>
+        <i class="fa fa-tint fa-5x" aria-hidden="true"></i>
+        <h4> Monday </h4>
+      </div>
+      <div class='col-sm-4 center-block text-center'>
+          <h4>45 degrees </h4>
+          <p> rainy</p>
+      </div>
+    </div>
+  </div>
+
+
+    <div id='zipcode' class="col-sm-12 text-center center-block">
+        Zip Code: <input ng-model='weather.zipcode' /> <button ng-model='weather.changeLocation()'> Change </button>
+    </div>
+
+</div>

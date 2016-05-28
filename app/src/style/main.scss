@@ -8,3 +8,41 @@ body { padding-bottom: 70px;}
 footer {
   background-color: white !important;
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#currentLocation {
+  border: 2px solid red;
+  padding: 20px;
+}
+
+#day1{
+  border: 2px solid red;
+    padding: 20px;
+}
+#day2 {
+  border: 2px solid red;
+    padding: 20px;
+}
+#day3 {
+  border: 2px solid red;
+    padding: 20px;
+}
+
+#zipcode {
+  padding: 20px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}

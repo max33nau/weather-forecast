@@ -10,7 +10,7 @@ export default {
       var deferred = $q.defer();
       $timeout(function() {
           deferred.resolve(true);
-        }, 4000);
+        }, 1000);
       return deferred.promise;
     }
   }
