@@ -1,0 +1,38 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "A weather forecast app designed to show a user the weather based location.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/public/index.js",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max33nau/weather-forecast.git"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "bootstrap",
+    "angularjs"
+  ],
+  "author": "Max Jacobsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/max33nau/weather-forecast/issues"
+  },
+  "homepage": "https://github.com/max33nau/weather-forecast#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "dotenv": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-mocha": "^2.2.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "mocha": "^2.5.3",
+    "path": "^0.12.7"
+  }
+}
